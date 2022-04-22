@@ -57,6 +57,10 @@ console.log(analyzeColor("pink"));
 let aColor = analyzeColor(randomColor);
 console.log(aColor);
 
+////        RIGHT ANSWER
+
+//      console.log(analyzeColor(randomeColor));
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
@@ -79,6 +83,20 @@ switch(randomColor){
 
 console.log(randomColor);
 
+////        RIGHT ANSWER
+
+// function analyzeColorSwitch(color) {
+//     switch (color) {
+//     case "blue":
+//      return "Blue is the color of the sky!";
+//     case "red":
+//      return "Strawberries are red";
+//     case "cyan"
+//      return "I don't know anything about cyan";
+//     default:
+//         return "Still trying to come up with something clever for that color 🤔";
+//     }
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -90,6 +108,10 @@ console.log(randomColor);
  alert(analyzeColor(color));
 
 
+//          CORRECT ANSWER
+
+//    let promptVal = prompt("What is your favorite color?").toLowerCase().trim()
+//      alert(analyzeColorSwitch(promptVal));
 /* ########################################################################## */
 
 /**
@@ -148,6 +170,31 @@ function calculateTotal (luckyNumber, totalAmt) {
 console.log(calculateTotal(0, 100));
 console.log(calculateTotal(4, 100));
 console.log(calculateTotal(5, 100));
+
+
+//      CORRECT ANSWER
+
+function calculateTotal(luckyNum, total) {
+    switch (luckyNum) {
+        case 1:
+            return total * .9;  // or total - (total * .1)
+        case 2:
+            return total * .75;
+        case 3:
+            return total * .65;
+        case 4:
+            return total / 2;
+        case 5:
+            return 0;
+        default:
+            return total;
+    }
+}
+
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -180,48 +227,28 @@ console.log(calculateTotal(5, 100));
  */
 
 
-// function isItANumber(num) {
-//     if (typeof num === "number") {
-//         return "That is a number!"
-//     } else {
-//         return "That is not a number!"
-//     }
+function numberGame(){
+    let userVal = parseFloat(prompt("Give me a number"));
+    if(isNaN(userVal)) {
+        alert("That's not a number...");
+    } else {
+        alert("Hey, did you know that " + userVal + "is a(n) " + evenOrOdd(userVal) + number
+        )
+    }   alert("Hey, did you know that " + userVal + "plus 100 is " + plus100(userVal) + "?");
+)       alert("Hey, did you know that " + userVal + "is a " + positiveOrNegative(userVal) + number
+    )
+}
 
+function plus100(num){
+    return num + 100;
 
-// console.log(isItANumber())
-// console.log(isItANumber())
-// console.log(isItANumber())
+    function evenOrOdd(num) {
+        if (num === 0) {
+        } else if (num % 2 === 0) {
+            return "even";
+        } else {
+            return "odd";
+        }
+    }
 
-// let ownsCow = false;
-//
-// if (ownsCow === true) {
-//     console.log("Going to milk Bessie!")
-// } else {
-//         console.log("Going to H-E-B to go get some milk!")
-//     }
-
-
-// if (condition1) {
-//     run this code;
-// } else if (condition2) {
-//     since the first condition wasn't met and the second was, I run;
-// } else {
-//     since neither the first nor second conditions were met, I run by default.
-// }
-
-// let hasCow = true;
-// let hasGoat = true;
-//
-// coolGuy();
-//
-// if (hasCow === true) {
-//     console.log("Milking Martha!");
-// } else if (hasGoat === true) {
-//     console.log("Milking Billie!");
-// } else {
-//     console.log("Going to Albertson's");
-// }
-//
-// function coolGuy() {
-//     hasCow = false;
-// }
+playWithMe();
