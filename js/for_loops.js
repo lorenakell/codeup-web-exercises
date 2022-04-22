@@ -9,6 +9,8 @@ function showMultiplicationTable(num) {
     return "";
 }
 console.log(showMultiplicationTable(7));
+console.log(showMultiplicationTable(27));
+
 
 // Exercise 3.
 
