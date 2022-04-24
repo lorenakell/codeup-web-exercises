@@ -7,7 +7,8 @@
      * 'names'.
      */
 
-
+let names = ["Orlando", "Kaylon", "Kenzie", "Felina"];
+    console.log(names);
 
     /**
      * TODO:
@@ -15,11 +16,17 @@
      * array.
      */
 
+console.log("There are " + name.length + " in the name " + name);
+
     /**
      * TODO:
      * Create log statements that will print each of the names individually by
      * accessing each element's index.
      */
+
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[3]);
 
     /**
      * TODO:
@@ -27,11 +34,22 @@
      * array.
      */
 
+for (let i = 0; i < names.length; i++) {
+    console.log(names[i]);
+    }
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
 
+    names.forEach(function(name) {
+        console.log(name)
+    });
+
+    for (let name of names) {
+        console.log(name);
+    }
     /**
      * TODO:
      * Create the following three functions, each will accept an array and
@@ -46,4 +64,21 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+    let sample = [1, 2, 3, 4, 5];
+
+    function first(array) {
+        return array[0];
+    }
+   //
+
+    function second(array) {
+        return array[1];
+    }
+   //     console.log(second(sample));
+
+    function last(array) {
+        return array[array.length - 1];
+
+        //   console.log(last(sample));
+    }
 })();
