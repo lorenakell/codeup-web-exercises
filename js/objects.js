@@ -60,8 +60,8 @@
     ];
 
     function calculateDiscount(amount) {
-        let finalAmount: 0,
-        let amountOff: 0,
+        finalAmount: 0,
+        amountOff: 0,
         if (amount > 200) {
             amountOff = amount * .12;
             finalAmount = amount - amountOff;
