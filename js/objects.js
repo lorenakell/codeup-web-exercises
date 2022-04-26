@@ -12,9 +12,10 @@
     //  *  > console.log(person.lastName) // "Sanchez"
     //  */
 
-    let person = {
-        firstName: "Lorena",
-        lastName: "Kell"
+    const person = {};
+
+        person.firstName: "Lorena",
+        person.lastName: "Kell"
     };
 
     console.log(person.firstName)  // shows Lorena
@@ -32,8 +33,8 @@
 
 
     person.sayHello = function () {
-        return console.log("Hello from " + this.firstName + " " + this.lastName + "!");
-    };
+        return "Hello from " + this.firstName + " " + this.lastName + "!";
+    }
 
     // should show "Hello from Lorena Kell!"
 
@@ -53,29 +54,29 @@
      * and console.log the relevant messages for each person
      */
 
-    let shoppers = [
+    const shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
 
-    function calculateDiscount(amount) {
-        finalAmount: 0,
-        amountOff: 0,
-        if (amount > 200) {
-            amountOff = amount * .12;
-            finalAmount = amount - amountOff;
-        } else {
-            finalAmount = amount;
-        };
-    };
+function discount(amount) {
+    let discountAmount;
+    if (amount > 200) {
+        discountAmount = (amount * 0.12);
+        return discountAmount;
+    } else if {
+        discountAmount = 0;
+        return discountAmount;
+    }
+}
 
-shoppers.forEach(function(shop) {
-    console.log(shoppers.name + " bought $" + shoppers.amount + " and got $" + amount.amountOff + "off and will pay $" + amount.finalAmount + ".");
-        });
-
-
-    // console.log(shoppers.name + " bought $" + shoppers.amount + " and got $" + amount.amountOff + "off and will pay $" + amount.finalAmount + ".");
+shoppers.forEach(function (shopper) {
+    console.log("This shopper's name is " + shopper.name + ".");
+    console.log("They owe $" + shopper.amount + ".");
+    console.log("Their discount total is $" + discount(shopper.amount).toFixed(2) + ".");
+    console.log("After discount , (if they qualified, they owe $" + (shopper.amount - discount(shopper.amount)).toFixed((2));
+});
 
 
     /** TODO:
@@ -90,6 +91,20 @@ shoppers.forEach(function(shop) {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    let title = "";
+    let author = "";
+    let bookNum = 0;
+
+    do{
+        function createBooks (parameters){
+            let title = parameters.title;
+            let author = poarameters.author;
+            console.log("Book #:" + (bookNum + 1) + "Title:" + title + " Author: " + author);
+        }
+
+        createBooks(books);
+    }
 
     /**
      * TODO:
@@ -115,6 +130,13 @@ shoppers.forEach(function(shop) {
      *      ---
      *      ...
      */
+
+    books.forEach(function(book) {
+        console.log("Book #" + ((Number(books.indexOf(book))) + 1));
+        console.log(book.title);
+        console.log(book.author.firstName + book.author.lastName);
+        console.log("---------");
+    });
 
     /**
      * Bonus:
