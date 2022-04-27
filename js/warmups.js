@@ -126,3 +126,29 @@ console.log(`Yay! I completed the warm-up!`)
 // };
 //
 // fizzBuzz (limit:);
+
+//// April 27, 2022
+
+// Write a function that takes in an array of strings and returns a string of the first letter of each element concatenated together:
+//
+// Ex: allFirstLetters(["dog", "cat", "frog",. "bat"]) -> "dcfb";
+
+let animals = ["dog", "cat", "frog", "bat"];
+
+function allFirstLetter () {
+let allFirstLetter = animals.map(function(animals) {
+    return animals[0];
+});
+
+// CORRECT ANSWER(S)
+
+    function allFirstLetters() {
+        let bucket = "";
+        for (let el of arr) {
+            bucket += el.substring(0, 1);
+        }
+        return bucket;
+    }
+
+    const testArrStrings = ['dog', 'cat', 'frog', 'bat'];
+console.log(allFirstLetters(testArrStrings));
