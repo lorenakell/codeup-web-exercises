@@ -152,3 +152,26 @@ let allFirstLetter = animals.map(function(animals) {
 
     const testArrStrings = ['dog', 'cat', 'frog', 'bat'];
 console.log(allFirstLetters(testArrStrings));
+
+
+//  April 28, 2022
+
+// Write a function that takes in a string and returns that string in alphabetical order.
+
+    function(codeup) {
+    return text.split('').sort().join;
+   };
+}
+codeup();
+
+//  RIGHT ANSWER
+
+function alphabetize(str) {
+    let strArray = str.split('');
+    console.log(strArray)
+    let sortedArray = strASrray.sort()
+    console.log(sortedArray);
+    return sortedArray.join('');
+}
+
+console.log(alphabetize)(str:"codeup");
