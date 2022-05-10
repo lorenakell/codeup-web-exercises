@@ -1,5 +1,6 @@
 "use strict";
 
+
 // function firstFunction(name) {
 //     return name;
 //
@@ -74,7 +75,6 @@
 // }
 //
 // scopeTest();
-
 // anything with curly braces has blocks
 
 // APRIL 22, 2022
@@ -175,3 +175,11 @@ function alphabetize(str) {
 }
 
 console.log(alphabetize)(str:"codeup");
+
+
+// May 10, 2022
+
+Warm-Up:
+Write a function that will accept an array of objects and return the object from the array that is the most colorful.
+
+
