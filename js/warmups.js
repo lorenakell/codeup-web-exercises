@@ -136,9 +136,9 @@ console.log(`Yay! I completed the warm-up!`)
 let animals = ["dog", "cat", "frog", "bat"];
 
 function allFirstLetter () {
-let allFirstLetter = animals.map(function(animals) {
-    return animals[0];
-});
+    let allFirstLetter = animals.map(function(animals) {
+        return animals[0];
+    });
 
 // CORRECT ANSWER(S)
 
@@ -151,7 +151,7 @@ let allFirstLetter = animals.map(function(animals) {
     }
 
     const testArrStrings = ['dog', 'cat', 'frog', 'bat'];
-console.log(allFirstLetters(testArrStrings));
+    console.log(allFirstLetters(testArrStrings));
 
 
 //  April 28, 2022
@@ -159,8 +159,8 @@ console.log(allFirstLetters(testArrStrings));
 // Write a function that takes in a string and returns that string in alphabetical order.
 
     function(codeup) {
-    return text.split('').sort().join;
-   };
+        return text.split('').sort().join;
+    };
 }
 codeup();
 
@@ -176,10 +176,30 @@ function alphabetize(str) {
 
 console.log(alphabetize)(str:"codeup");
 
-
 // May 10, 2022
 
 Warm-Up:
 Write a function that will accept an array of objects and return the object from the array that is the most colorful.
+
+
+// May 11, 2022
+
+    Warm-Up:
+Write a function that will accept a string. It should return an object with the following properties: string, size, containsLetterFromRSTLNE, and isOneWord.
+
+    Ex 1. makeObjectFromString(“tacocat”) -> {
+    string: “tacocat”,
+    size: 7,
+        containsLetterFromRSTLNE: true,
+        isOneWord: true
+};
+
+Ex 2. makeObjectFromString(“John Jacob”) -> {
+    string: “John Jacob”,
+    size: 10,
+        containsLetterFromRSTLNE: false,
+        isOneWord: false
+};
+
 
 
