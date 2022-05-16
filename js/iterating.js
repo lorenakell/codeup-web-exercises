@@ -16,7 +16,7 @@ let names = ["Orlando", "Kaylon", "Kenzie", "Felina"];
      * array.
      */
 
-console.log("There are " + name.length + " in the name " + name);
+console.log(names.length);
 
     /**
      * TODO:
@@ -26,6 +26,7 @@ console.log("There are " + name.length + " in the name " + name);
 
 console.log(names[0]);
 console.log(names[1]);
+console.log(names[2]);
 console.log(names[3]);
 
     /**
@@ -69,7 +70,7 @@ for (let i = 0; i < names.length; i++) {
     function first(array) {
         return array[0];
     }
-   //
+   //   console.log(first(sample));
 
     function second(array) {
         return array[1];
@@ -79,6 +80,6 @@ for (let i = 0; i < names.length; i++) {
     function last(array) {
         return array[array.length - 1];
 
-        //   console.log(last(sample));
+            //   console.log(last(sample));
     }
 })();
