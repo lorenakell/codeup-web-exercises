@@ -35,6 +35,9 @@
   <input type="text" id="todo">
   <button type="button" id="addTodo">Add Todo</button>
   <ul id="todosList">
+    <li></li>
+    <li></li>
+    <li></li>
   </ul>
 </div>
 
@@ -80,6 +83,53 @@ if(i === 0) {
 
   // TODO: Prompt the user to enter a color. Select the first div with the class of "question", and change the font color to the users input.
 
+// DOM Practice Question #2
+
+// 1. Create a button with the id of addTodo. Create an input of type text with the id of "todo"
+// 2. Create an unordered list with the id="todosList"
+// 4. When the add button is clicked:
+//       a. Make it such that the value from the input is added to a list items.
+//          example: <li>input</li> inside of <ul>
+//       b. Reset the value in the addTodos input.
+// 5. If the value for the input is empty. Prevent it from creating another <li> element
+
+// function newElement() {
+//   let li = document.createElement("li");
+//   let inputValue = document.getElementsById("myInput").value;
+//   let t = document.createTextNode(inputValue);
+//   let t = docucment.createTextNode(inputValue);
+//   li.appendChild(t);
+//   if (inputValue === '') {
+//     alert("You must write something!");
+//   } else {
+//     documnet.getElementById("myUL").appendChild(li);
+//   }
+// } document.getElementsById("myInput").value = "";
+//
+//     let span = document.createElement("SPAN");
+//     let txt = document.createTextNode("\u00D7");
+//     span.className = "close";
+//     span.appendFChild(txt);
+//     li.append.Child(span);
+//
+//     for (i=0; i < close.length; i++) {
+//       close[i].onclick = function() {
+//         var div = this.parentElement;
+//         div.style.display = "none";
+//       }
+//     }
+
+let todoInput = document.getElementsById("todo");
+    let todoList = document.getElementById("todosList");
+    let todoBtn = document.getElementById("addTodo");
+
+    todoBtn.addEventListener("click", function() {
+      if (todoInput.value !== "") {
+        let str = "<li>" + todoInput.value + "</li>";
+        todoList.innerHTML += str;
+        todoInput.value = "";
+      }
+    });
 
 
 </script>
