@@ -201,7 +201,12 @@ Ex 2. makeObjectFromString(“John Jacob”) -> {
         isOneWord: false
 };
 
+//      May 24, 2022
 
+// DOM Question #4
+
+// When the mouse enters the content area of the 4th div with the class of "question", an alert should pop up
+// that reads "CONGRATULATIONS ON YOUR NEW CRUISE!";
 
 
 

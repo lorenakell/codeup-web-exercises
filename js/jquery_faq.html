@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM FAQ</title>
+</head>
+<body>
+
+<p>FAQ about national parks:</p>
+
+<dl>
+  <dt>Beast of Bodmin</dt>
+  <dd class="invisible">A: large feline inhabiting Bodmin Moor.</dd>
+
+  <dt>Morgawr</dt>
+  <dd class="invisible">A sea serpent.</dd>
+
+  <dt>Owlman</dt>
+  <dd class="invisible">A: giant owl-like creature.</dd>
+
+</dl>
+
+
+
+
+$("#btn-2").click(function() {
+$("ul").each(function () {
+$(this).children().last().css("background", "yellow");
+
+$(h3).click(function() {
+$(this).next().children().css("font-weight", "bold");
+});
+
+$("li").click(function() {
+$(this).parent().children("li").first().css("color", "blue");
+})
+});
+
+
+
+
+</body>
+</html>

@@ -85,6 +85,28 @@
       //  document.getElementById("")
     })
 
+    // DOM Question #4
+
+    // When the mouse enters the content area of the 4th div with the class of "question", an alert should pop up
+    // that reads "CONGRATULATIONS ON YOUR NEW CRUISE!";
+
+    document.getElementsByClassName("question")[4].addEventListener("mouseenter", function() {
+        alert("CONGRATULATIONS ON YOUR NEW CRUISE!");
+    });
+
+    jQuery
+    w/ Traversal Methods
+
+$("question").first().next().next().next().next().mouseenter(function () {
+    alert("CONGRATULATIONS ON YOUR NEW CRUISE!")
+});
+    w/ nth-of-type
+
+    $(".question:nth-of-type(5)").mouseenter(function() {
+        alert("CONGRATULATIONS ON YOUR NEW CRUISE!")
+    });
+
+
 </script>
 </body>
 </html>
