@@ -13,7 +13,7 @@
     <h1 id="place"></h1>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <script src="js/keys.js"></script>
-    <script src="js/geocode-utils.js"></script>
+    <script src="js/geocoder-utils.js"></script>
     <script>
       mapboxgl.accessToken = MAPBOX_API_KEY;
       const MAP = new mapboxgl.Map({
@@ -40,16 +40,6 @@
         .addTo(MAP);
 
       MARKER.setPopup(POPUP);
-
-      geocode("1510 Polk St, Houston, TX 77003", MAPBOX_API_KEY).then(function (
-        info
-      ) {
-        console.log(info);
-        const POPUP_TOYOTA = new mapboxg1.Popup()
-          .setLngLat(info)
-          .setHTML("<p>This is where the Rockets play!</p>")
-          .addTo(MAP);
-      });
 
       reverseGeocode({ lat: 52.3353, lng: 4.8659 }, MAPBOX_API_KEY).then(
         function (location) {

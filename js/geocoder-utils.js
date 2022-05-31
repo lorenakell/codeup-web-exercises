@@ -1,8 +1,8 @@
 "use strict";
 
 function geocode(search, token) {
-  var baseUrl = "https://api.mapbox.com";
-  var endPoint = "/geocoding/v5/mapbox.places/";
+  let baseUrl = "https://api.mapbox.com";
+  let endPoint = "/geocoding/v5/mapbox.places/";
   return fetch(
     baseUrl +
       endPoint +
@@ -22,8 +22,8 @@ function geocode(search, token) {
 }
 
 function reverseGeocode(coordinates, token) {
-  var baseUrl = "https://api.mapbox.com";
-  var endPoint = "/geocoding/v5/mapbox.places/";
+  let baseUrl = "https://api.mapbox.com";
+  let endPoint = "/geocoding/v5/mapbox.places/";
   return fetch(
     baseUrl +
       endPoint +
@@ -34,11 +34,10 @@ function reverseGeocode(coordinates, token) {
       "?" +
       "access_token=" +
       token
-  )
-    .then(function (res) {
-      return res.json();
-    })
-    .then(function (data) {
-      return data.features[0].place_name;
-    });
+  ).then(function (res) {
+    return res.json();
+  });
+  .then(function (data) {
+    return data.features[0].place_name;
+  });
 }
