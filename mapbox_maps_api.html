@@ -1,71 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Title</title>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
     <link
-            href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
-            rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
+      rel="stylesheet"
     />
-</head>
-<body>
-<div id="map" style="width: 95vw; height: 75vh; margin: auto"></div>
-<h1 id="place"></h1>
-<script src="js/keys.js"></script>
-<script src="js/geocode-utils.js"></script>
-<script>
-    mapboxgl.accessToken = MAPBOX_API_KEY;
-    const MAP = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: "pk.eyJ1IjoibG9yZW5ha2VsbCIsImEiOiJjbDNseTh0eWswNzRrM2pwYm4yOWRoYmZtIn0.w-a10MAig2nKBMTpuC2Bxg";
-        // style URL
-        center:
-    })
+  </head>
+  <body>
+    <div id="map" style="width: 95vw; height: 75vh; margin: auto"></div>
+    <h1 id="place"></h1>
+    <script src="js/keys.js"></script>
+    <script src="js/geocode-utils.js"></script>
+    <script>
+        mapboxgl.accessToken = MAPBOX_API_KEY;
+        const MAP = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: "pk.eyJ1IjoibG9yZW5ha2VsbCIsImEiOiJjbDNseTh0eWswNzRrM2pwYm4yOWRoYmZtIn0.w-a10MAig2nKBMTpuC2Bxg";
+            // style URL
+            center: [-98.4896, 29.4269],
+            zoom: 9
+        });
 
 
-    const MARKER = new mapboxgl.Marker()
+        const MARKER = new mapboxgl.Marker()
+            .setLngLat([-98.4896, 29.4269])
+            .setDraggable(true)
+            .addTo(MAP);
+
+        // MARKER.setLngLat([-98.4896, 29.4268})
+
+        const CODEUP_POPUP = new mapboxgl.Map({
+            container: "map", // container ID
+            style: "mapbox://styles/mapbox/streets-v11", // style URL
+            center: [-98.4896, 29.4268], // starting position [lng, lat]
+            zoom: 9, // starting zoom
+        });
+
+        const MARKER = new mapboxgl.Marker()
         .setLngLat([-98.4896, 29.4269])
         .setDraggable(true)
         .addTo(MAP);
 
-    // MARKER.setLngLat([-98.4896, 29.4268})
+        const CODEUP_POPUP = new mapboxgl.Popup()
+          .setLngLat([-98.4896, 29.4269])
+          .setHTML("<p>Codeup is a cool place to be at!!</p>")
+          .addTo(MAP);
 
-    const CODEUP_POPUP = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [-98.4896, 29.4268], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-    });
+        const POPUP = new mapboxgl.Popup()
+        .setHTML("<p>This is where I live...</p>")
+        .addTo(MAP);
 
-    const POPUP = new mapboxgl.Popup()
-        .setHTML("<p>Codeup is a cool place to be at!!</p>");
+        MARKER.setPopup(POPUP);
 
-    MARKER.setPopup(POPUP);
-
-    geocode("1510 Polk St, Houston, TX 77003", MAPBOX_API_KEY).then(function (info) {
-        console.log(info);
-        const
-            POPUP_TOYOTA = new mapboxg1.Popup().setLngLat(info).setHTML(<p>This is where the Rockets play!</p>").addTo(MAP);
-    });
-
-        reverseGeocode({lat: 52.335283147745116, lng: 4.865851155064895}, MAPBOX_API_KEY).then(function(location) {
-            console.log(location);
+        geocode("1510 Polk St, Houston, TX 77003", MAPBOX_API_KEY).then(function (info) {
+            console.log(info);
+            const
+                POPUP_TOYOTA = new mapboxg1.Popup().setLngLat(info).setHTML("<p>This is where the Rockets play!</p>").addTo(MAP);
         });
 
-        MARKER.on("dragend", function() {
-            LONG_LAT = MARKER.getLngLat();
-            //        document.getElementBId("place").innerHTML = LONG_LAT.lng + ", " + LONG_LAT.lat;
-            MAP.flyTo({center: [LONG_LAT.lng, LONG_LAT.lat]});
-            reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
-                document.getElementById("place").innerHTML = data;
+            reverseGeocode({lat: 52.3353, lng: 4.8659}, MAPBOX_API_KEY).then(function(location) {
+                console.log(location);
+            });
+
+            let LONG_LAT = [];
+
+            MARKER.on("dragend", function () {
+                LONG_LAT = MARKER.getLngLat();
+                //        document.getElementBId("place").innerHTML = LONG_LAT.lng + ", " + LONG_LAT.lat;
+                MAP.flyTo({center: [LONG_LAT.lng, LONG_LAT.lat]});
+                reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
+                    document.getElementById("place").innerHTML = data;
+                })
             })
-        })
 
+            let places = [
+          {
+              name: "Statue of Liberty",
+              coordinates: [-74.0445004, 40.6892494]
+          }, {
+              name: "Empire State Building",
+              coordinates: [-73.9879522, 40.7485452]
+          }, {
+              name: "Lincoln Memorial",
+              coordinates: [-77.0523647, 38.8892686]
+          }
+      ];
 
+          places.forEach(function(place) {
+              let marker = new mapboxgl.Marker()
+              .setLngLat(place.coordinates)
+              .addTo(MAP)
+          })
 
-
-        })
-</script>
-</body>
+          console.log(MAP);
+    </script>
+  </body>
 </html>
