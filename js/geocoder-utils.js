@@ -34,10 +34,7 @@ function reverseGeocode(coordinates, token) {
       "?" +
       "access_token=" +
       token
-  ).then(function (res) {
-    return res.json();
-  });
-  .then(function (data) {
+  ).then(function (data) {
     return data.features[0].place_name;
   });
-}
+  });
