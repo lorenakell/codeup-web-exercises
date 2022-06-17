@@ -2,11 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mapbox Maps</title>
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
-      rel="stylesheet"
-    />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet"/>
   </head>
   <body>
     <div id="map" style="width: 95vw; height: 75vh; margin: auto"></div>
@@ -32,7 +30,7 @@
 
       const CODEUP_POPUP = new mapboxgl.Popup()
         .setLngLat([-98.4896, 29.4269])
-        .setHTML("<p>Codeup is a cool place to be at!!</p>")
+        .setHTML("<p>Codeup is so cool!!</p>")
         .addTo(MAP);
 
       const POPUP = new mapboxgl.Popup()
@@ -49,29 +47,30 @@
 
       let LONG_LAT = [];
 
-      MARKER.on("dragend", function () {
-        LONG_LAT = MARKER.getLngLat();
-        //        document.getElementBId("place").innerHTML = LONG_LAT.lng + ", " + LONG_LAT.lat;
-        MAP.flyTo({ center: [LONG_LAT.lng, LONG_LAT.lat] });
-        reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
-          document.getElementById("place").innerHTML = data;
-        });
-      });
+      //  DAVID'S NOTES
 
-      let places = [
-        {
-          name: "Statue of Liberty",
-          coordinates: [-74.0445004, 40.6892494],
-        },
-        {
-          name: "Empire State Building",
-          coordinates: [-73.9879522, 40.7485452],
-        },
-        {
-          name: "Lincoln Memorial",
-          coordinates: [-77.0523647, 38.8892686],
-        },
-      ];
+      // MARKER.on("dragend", function () {
+      //   LONG_LAT = MARKER.getLngLat();
+      //   MAP.flyTo({ center: [LONG_LAT.lng, LONG_LAT.lat] });
+      //   reverseGeocode(LONG_LAT, MAPBOX_API_KEY).then(function (data) {
+      //     document.getElementById("place").innerHTML = data;
+      //   });
+      // });
+
+      // let places = [
+      //   {
+      //     name: "Statue of Liberty",
+      //     coordinates: [-74.0445004, 40.6892494],
+      //   },
+      //   {
+      //     name: "Empire State Building",
+      //     coordinates: [-73.9879522, 40.7485452],
+      //   },
+      //   {
+      //     name: "Lincoln Memorial",
+      //     coordinates: [-77.0523647, 38.8892686],
+      //   },
+      // ];
 
       places.forEach(function (place) {
         let marker = new mapboxgl.Marker()

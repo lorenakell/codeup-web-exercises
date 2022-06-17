@@ -3,41 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM FAQ</title>
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+    <style>
+        * {
+            line-height: 1.5em;
+        }
 
-<p>FAQ about national parks:</p>
+        .invisible {
+            visibility: hidden;
+        }
 
-<dl>
-  <dt>Beast of Bodmin</dt>
-  <dd class="invisible">A: large feline inhabiting Bodmin Moor.</dd>
+        .highlighter {
+            background: palevioletred;
+        }
 
-  <dt>Morgawr</dt>
-  <dd class="invisible">A sea serpent.</dd>
+        .emboldened {
+            font-weight: bold;
+        }
 
-  <dt>Owlman</dt>
-  <dd class="invisible">A: giant owl-like creature.</dd>
+        .enbluened {
+            color: #373fff;
+        }
 
-</dl>
+        body {
+            font-size: 1.25em;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dd {
+            margin-bottom: 1.2em;
+        }
+
+        .styler {
+            position: relative;
+            top: 0;
+            left: 0;
+            transition: 1s;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: #3B94D9;
+            border: #30447B solid 5px;
+            color: aliceblue;
+            padding: 10px;
+            box-shadow: 5px 5px 10px black;
+        }
+
+        .styler:hover {
+            background-color: brown;
+            color: blanchedalmond;
+            border-color: orangered;
+            box-shadow: 0 0 5px black;
+            top: 5px;
+            left: 5px;
+        }
+        .footer {
+            font-size: 7px;
+        }
+    </style>
+
+    <p>FAQ about national parks:</p>
+
+    <dl>
+        <dt>The National Park Service protects how many acres?</dt>
+        <dd class="invisible">A: The National Park Service protects over 84 million acres of wild landscapes and historic sites.</dd>
+
+        <dt>Which park is the oldest in the U.S.?</dt>
+        <dd class="invisible">A: Yellowstone National Park (in Wyoming, Idaho, and Montana) is the oldest U.S. national
+            park, founded in 1872.</dd>
+
+        <dt>Where are the 10 highest waterfalls?</dt>
+        <dd class="invisible">A: Three of the 10 highest waterfalls in the world are located in Yosemite National Park in
+            California.</dd>
+
+        <dt>How much taller is Ribbon Falls compared to Niagra Falls?</dt>
+        <dd class="invisible">A: Ribbon Falls in Yosemite is nine times taller than Niagara Falls.</dd>
+
+        <dt>What is the hottest temperature recorded?</dt>
+        <dd class="invisible">A: One of the hottest temperatures on earth was recorded in 1913 in Death Valley National Park, registering 134 degrees.</dd>
+
+        <dt>What is the Grand Canyon known as?</dt>
+        <dd class="invisible">A: The Grand Canyon, in Grand Canyon National Park in Arizona, is known as one of the Seven Natural Wonders of the World.</dd>
+
+        <dt>What are National Parks home life to?</dt>
+        <dd class="invisible">A: National parks are home to life on a big scale: Sequoia trees are some of the world's largest living things, and Alaskan brown bears are some of the world's largest carnivores.</dd>
+
+        <dt>Who or what is General Sherman?</dt>
+        <dd class="invisible">A: California's Sequoia National Park is home to the largest living single-stem tree in the world, the wonderfully named General Sherman. The tree is approximately 275 feet tall and weighs approximately 1,900 metric tons.</dd>
+
+        <dt>What happened when a tree fell in 1937 in Sequoia National Park?</dt>
+        <dd class="invisible">A: When a giant sequoia tree fell and blocked a road in Sequoia National Park in California in 1937, the National Park Service simply created a tunnel through the 275-foot by 21-foot tree.</dd>
+
+        <dt>Which National Park is the largest?</dt>
+        <dd class="invisible">A: Wrangell-St. Elias National Park, Alaska, is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
+    </dl>
+    <h3 id="national-parks-heading">Big Bend</h3>
+        <ul id="national-parks">
+            <li>Big Bend National Park covers a total area of 801,163 acres.</li>
+            <li>It is the only state park to have an entire mountain range within its borders.</li>
+            <li>The park is named the “big bend” after the Rio Grande</li>
+            <li>The Big bend is famous for Hot Springs</li>
+        </ul>
+    <h3 id="national-parks-heading">Guadalupe Mountains</h3>
+        <ul id="national-parks">
+            <li>The highest peak in the Guadalupe Mountains is appropriately named Guadalupe Peak. At 8,751 feet it is the highest point in the entire state of Texas.</li>
+            <li>Reptiles are plentiful in the Chihuahuan Desert landscape, with snakes including bullsnakes, coachwhips, and 5 types of rattlesnakes, the largest being the western diamondback.</li>
+            <li>The Guadalupe Mountains were witness to the greatest mass extinction of all time.</li>
+            <li>There’s gold in them thar hills…or so the story goes.</li>
+        </ul>
+<h3 id="national-parks-heading">Haleakalā</h3>
+        <ul id="national-parks">
+            <li>Haleakala translates to “House of the Sun”. Viewing the sunrise from the summit of Haleakala is a popular activity.</li>
+            <li>The only native mammals in Haleakala are bats and seals. All other land mammals were brought by man, and many have been highly destructive.</li>
+            <li>There are at least 1,000 native species of flowering plants in Hawaii. 90% of these are endemic, found only in Hawaii.</li>
+            <li>The world famous scenic Hana Highway leads to the Kipahulu coastal area of the park.</li>
+        </ul>
+
+    <button class="styler" id="btn-1">Click here to show/hide answers</button>
+
+    <button class="styler" id="btn-2">Click here to make the last fact of each park highlight</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $("#btn-1").click(function() {
+                $("dd").toggleClass("invisible");
+            });
+
+            $("dt").click(function() {
+                if ($(this).css("background-color") !== "rgba(0, 0, 0, 0)") {
+                    $(this).css("background-color", "rgba(0, 0, 0, 0)");
+                } else {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+
+            $("#btn-2").click(function () {
+                $("ul").each(function () {
+                    $(this).children().last().css("background", "yellow");
+                });
+            });
+
+            $("h3").click(function () {
+                $(this).next().children().css("font-weight", "bold");
+            });
+
+            $("li").click(function() {
+                $(this).parent().children().first().css("color", "blue");
+            })
+        });
+    </script>
 
 
-
-
-$("#btn-2").click(function() {
-$("ul").each(function () {
-$(this).children().last().css("background", "yellow");
-
-$(h3).click(function() {
-$(this).next().children().css("font-weight", "bold");
-});
-
-$("li").click(function() {
-$(this).parent().children("li").first().css("color", "blue");
-})
-});
-
-
-
-
-</body>
+    </body>
+    <footer class="footer"> questions and answers found on
+        https://www.outdoorproject.com/articles/59-fun-facts-about-our-national-parks</footer>
 </html>

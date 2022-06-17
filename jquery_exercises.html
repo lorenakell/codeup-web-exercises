@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>jQuery Exercise</title>
 </head>
+
 <body>
     <h1 class="style">jQuery Exercise</h1>
-        <div id="codeup">
+        <div id="wasntMe">
             <p id="intro">Why would anyone want to use JavaScript without JQuery?</p>
                  <ul class="easier">
                     <li class="easy">It's easier</li>
@@ -16,10 +17,65 @@
                     <li class="easy">It's easier</li>
                 </ul>
         </div>
+        <div class="codeup">
+            <p>
+                I've fallen and I can't get up hoop earrings will smith slacker dawg, tom hanks tom cruise grunge overalls with one strap undone. Fluorescent patti mayonnaise jagged little pill snapple. Necklaces with your name on a grain of rice move it football head personal computer punk. La gear crew cut gangsta’s paradise leggings, tamagotchi my heart will go on alta vista light up sneakers berry lips baywatch.
+            </p>
+        </div>
+        <div class="codeup">
+            <p>
+            Carpenter pants ghost pottery scene playstation fanny packs berry lips korn. How do you like them apples crimped hair fila troll dolls jeans keepin’ it real. Spiked hair jagged little pill christina aguilera animated gifs. Topanga courtney love the more you know green day garth brooks, tom cruise valley girl new jack city barbie. Mario lemieux mtv tae bo the simpsons.
+            </p>
+        </div>
+        <div class="codeup">
+            <p>
+            Piercings fly blur denzel washington, ford explorer forrest gump steve urkel discman ring pops da bomb. Seinfeld pulp fiction the phantom menace boyz II men. Fila toyota previa nintendo 64 this is your brain on drugs blockbuster video armageddon. Smarter child apollo 13 move it football head alta vista scrunched socks I've fallen and I can't get up, windows 95 vertically striped shirts track jackets toni braxton beepers.
+        </p>
+        </div>
+
 
     <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
 <script>
-    "use strict"
+    "use strict";
+
+    $(function () {
+
+        alert("DOM has finished loading!")
+
+        // ID SELECTORS
+
+        //  3. Use jQuery to select an element by the id. Alert the contents of the element.
+
+        let contents = $('#wasntMe').html();
+            alert("jQuery question everyone wants to ask... with answer");
+
+        // 4. Update the jQuery code to select and alert a different id.
+
+        let contents2 = $('#intro').html();
+            alert("introduction to the main content");
+
+    //  CLASS SELECTORS
+
+        // 3. Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+
+        $('.codeup').css('border', '1px wide red');
+
+        //  ELEMENT SELECTORS
+
+        // 2. Using jQuery, set the font-size of all li elements to 20px.
+
+        $('li').css('font-size', '20px');
+
+        // 3. Craft selectors that highlight all the h1, p, and li elements.
+
+        $('h1, p, li').css('background-color', 'yellow');
+
+        // 4. Create a jQuery statement to alert the contents of your h1 element(s).
+
+        let contents3 = $('h1').html;
+        alert("Name of this exercise");
+
+        //  MOUSE EVENTS
 
    // 1. Add jQuery code that will change the background color of an h1 element when clicked.
 
@@ -29,8 +85,8 @@
 
     // 2. Make all paragraphs have a font size of 18px when they are double clicked.
 
-        $('p').ondblclick(function () {
-            $(this).css("font", "18px");
+        $('p').dblclick(function () {
+            $(this).css('font-size', '18px');
         })
 
     // 3. Set all li text color to red when the mouse is hovering; reset to black when it is not.
@@ -41,7 +97,9 @@
         function() {
             $(this).css("color", "black");
         })
-
+    });
 </script>
+<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+
 </body>
 </html>
